@@ -9,5 +9,5 @@
 source "/home/$USER/.profile"
 
 # uncomment hte next line for testnet,
-screen -Sdm testnet-qrl start_qrl --network-type testnet
+screen -Sdm testnetqrl start_qrl --network-type testnet
 #screen -Sdm qrl start_qrl
