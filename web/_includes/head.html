@@ -1,0 +1,25 @@
+<head>
+	<!-- Metadata -->
+    {% include meta.html %}
+
+    <!-- Site Title -->
+    <title>{{site.title}}</title>
+    <!-- Stylesheets -->
+    
+    <link rel="stylesheet" href="{% if site.baseurl %}{{site.baseurl}}{% else %}{% endif %}/assets/css/colorCustom.css">
+    <link rel="stylesheet" href="{% if site.baseurl %}{{site.baseurl}}{% else %}{% endif %}/assets/css/style.css">
+    <link rel="stylesheet" href="{% if site.baseurl %}{{site.baseurl}}{% else %}{% endif %}/assets/css/custom-style.css">
+    <link rel="stylesheet" href="{% if site.baseurl %}{{site.baseurl}}{% else %}{% endif %}/assets/css/custom.css">
+	<!-- fontawesome script -->
+    <script src="https://kit.fontawesome.com/6a97161b76.js" crossorigin="anonymous"></script>
+	<!-- favicon -->
+    <link rel="shortcut icon" href="{% if site.favicon-url %}{{site.favicon-url}}{% else %}{{ 'assets/images/logo.png' | absolute_url }}{% endif %}" type="image/x-icon">
+
+    <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    
+    <script src="{% if site.baseurl %}{{site.baseurl}}{% else %}{% endif %}/assets/js/custom.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    
+
+</head>

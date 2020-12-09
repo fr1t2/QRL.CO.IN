@@ -1,0 +1,113 @@
+<section class="hero is-fullheight is-grey has-text-centered " id="about">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-centered ">
+                    <div class="block">
+                        <p class="title is-spaced  is-size-2 is-uppercase has-text-weight-bold">Tools for the Future</p>
+                        <p class="subtitle is-4 "> Open and Secure</p>
+                    </div>
+                    <div class="block ">
+                        <p class="block">
+                            Building open source and free tools to interact with the {{ site.coin }} blockchain. 
+                            Using advanced cryptography and quantum resistant systems to secure the future. 
+                            Dedicated to bringing innovation and future-minded thinking to the masses with easy to digest systems and tools built off the 
+                            <a target="_blank" href="{{ site.coin_repo }}">
+                                {{ site.coin }} blockchain
+                            </a> 
+                            project. 
+                            <br>
+                        </p>
+
+                    </div>
+                    <br>
+                    <div class="columns">
+                        <div class="column is-centered">
+                            <hr class="has-background-grey">
+                            <div class="block">
+                                <p class="title 
+                                    second-title
+                                    is-spaced 
+                                    is-4 
+                                    is-uppercase 
+                                    has-text-weight-bold ">
+                                    Strong Cryptography
+                                </p> 
+                                <p class="subtitle 
+                                    is-7">
+                                </p>
+                            </div>
+                            <div class="block">
+                                <p>Using quantum resistant cryptography provides security today. We aim to bring this security with a focus on ease of use. Everyone deserves the highest level of security possible.</p>
+                            </div>
+                        </div>
+                        <div class="column is-centered">
+                            <hr class="has-background-grey">
+                            <div class="block">
+                                <h4 class="title 
+                                     second-title
+                                    is-spaced 
+                                    is-4 
+                                    is-uppercase 
+                                    has-text-weight-bold">
+                                    Innovative Solutions 
+                                </h4> 
+                                <p class="subtitle
+                                     is-7">
+                                </p>
+                            </div>
+                            <div class="block">
+                                <p>
+                                    Bridging the gap between ultra-secure technology and real world use-cases. Using the distributed, immutable ledger to power a fleet of tools that will change the future.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="column is-centered">
+                        <div class="block is-size-6 ">                        
+                                <hr class="has-background-grey">
+                            <p>
+                            QRL.co.in is not an official project of the QRL team, instead it's a project put together for things built on top the official project.
+
+                                For now we're workling on a faucet to help promote the {{ site.coin }} blockchain getting coins into more users hands. If you would like to contribute building the next cool tools, <a href="{{site.url}}{{site.baseurl}}/about/#contact">
+                                    Get In Touch!
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Buttons based on location -->
+                    {% if page.url == "/" %}
+                        <div class="column is-8 is-offset-2">
+                        <a href="{{site.url}}{{site.baseurl}}/#faucet" class="button is-large is-rounded is-uppercase has-text-weight-bold is-black is-outlined is-inverted ">
+                                <span>
+                                    {{ site.coin }} Faucet
+                                </span>
+                                <span class="icon is-small"> 
+                                    <i class="fas fa-faucet"></i>
+                                </span>
+                                <span>
+                                 Coming Soon
+                                </span>
+                            </a>
+                        </div>
+                    {% elsif page.url == "/about" %}
+                        <div class="column is-8 is-offset-2">
+                        <a href="{{site.url}}{{site.baseurl}}/faucet" class="button is-large is-rounded is-uppercase has-text-weight-bold is-black is-outlined is-inverted ">
+                                <span>
+                                    {{ site.coin }} Faucet
+                                </span>
+                                <span class="icon is-small"> 
+                                    <i class="fas fa-faucet"></i>
+                                </span>
+                            </a>
+                        </div>
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>

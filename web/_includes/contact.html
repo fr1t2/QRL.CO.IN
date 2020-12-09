@@ -1,0 +1,97 @@
+<section class="hero  is-fullheight is-dark has-text-centered " id="contact">
+        <div class="hero-body">
+            <div class="container has-text-centered" id="page-section">
+                <div class="section id="{{ page.title }}"">
+                    <div class="columns ">
+                        <div class="column ">
+                            {% if page.title %}
+                                <h2 class="title is-2 is-uppercase has-text-weight-bold ">
+                                    {{ page.title }}
+                                </h2>
+                                <hr class=" has-background-dark">
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="columns ">
+                        <div class="column has-text-left" >
+                            <div class="block">
+                                <p>
+                                    {{ site.contact-statement }} 
+                                </p>
+                            </div>
+                            <div class="block">
+                                <p>
+                                    We are looking for others that share this vision. If you would like to join our team and help
+                                    build the next new great thing, drop us a line. Currently this is small focused group of advocates pushing
+                                    secure cryptography and radical ideals into functional tools for the masses.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column is-4 is-offset-4" >
+                            <div class="field">
+                                <div class="control">
+                                    <div class="tags  has-addons">
+                                        <span class="tag is-medium is-black">Email:</span>
+                                        <span class="tag is-medium is-dark"><a href="mailto:{{ site.email }}">{{ site.email }}</a></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="is-hidden-mobile">
+                    <div class="columns ">
+                        <div class="column ">
+                            <h2 class="title is-2 is-uppercase has-text-weight-bold ">
+                                Donate and Support
+                            </h2>
+                                <hr class=" has-background-dark">
+                        </div>
+                    </div>
+                    <div class="columns ">
+                        <div class="column has-text-left" >
+                            <div class="block">
+                                <p>
+                                    This is a self funded, non-official project. If you want to help with server costs or buy us a coffee
+                                    please send donations to:
+                                </p>
+                            </div>
+                            <div class="columns">
+                                <div class="column " >
+                                    <div class="field ">
+                                        <div class="control">
+                                            <div class="tags  has-addons">
+                                                <span class="tag is-medium is-black">QRL:</span>
+                                                <span class="tag is-medium is-dark">{{ site.coin_address }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="control">
+                                            <div class="tags  has-addons">
+                                                <span class="tag is-medium is-black">BTC:</span>
+                                                <span class="tag is-medium is-dark">{{ site.BTC_address }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="control">
+                                            <div class="tags  has-addons">
+                                                <span class="tag is-medium is-black">ETH:</span>
+                                                <span class="tag is-medium is-dark">{{ site.ETH_address }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>

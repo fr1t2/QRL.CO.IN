@@ -1,0 +1,15 @@
+[
+	{ "info": { 
+		"blockHeight": "1292520", 
+		"blockLastHash": "rLhylAkDlpVAvMuKUaeyBcj6zHf05aw5FLwSxwEAAAA=", 
+		"networkId": "The sleeper must awaken", 
+		"numConnections": 12, 
+		"numKnownPeers": 29, 
+		"state": "SYNCED", 
+		"uptime": "692178", 
+		"version": "2.0.6 python" } 
+	} ,
+	{ "Unix_Timestamp": "1607215850" } ,
+	{ "Uncompressed_Chain_Size": "5.7G" } ,
+	{ "Tar_FileSize": "5.0G" }
+]
