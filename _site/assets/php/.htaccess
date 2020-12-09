@@ -1,5 +1,5 @@
 <FilesMatch "\.(php|sh)$">
-Order allow, deny
+Order allow,deny
 Deny from all
 
 </FilesMatch>
