@@ -1,0 +1,6 @@
+[
+{ "info": { "blockHeight": "405371", "blockLastHash": "aT/jQtNOcHRuTSRwqXRxAg1KrYy38XA5OsKRWPYEFQA=", "networkId": "The Random Genesis", "numConnections": 3, "numKnownPeers": 44, "state": "SYNCED", "uptime": "709838", "version": "2.0.6 python" } } ,
+{ "Unix_Timestamp": "1607234256" } ,
+{ "Uncompressed_Chain_Size": "5.7G" } ,
+{ "Tar_FileSize": "612M" }
+]
