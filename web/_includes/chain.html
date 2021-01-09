@@ -1,4 +1,4 @@
-<section class="hero is-halfheight is-grey  " id="chain">
+<section class="hero is-fullheight is-grey  " id="chain">
     <div class="hero-body">
 		<div class="columns is-centered">
 			<div class="block is-size-6 ">                        
@@ -26,16 +26,25 @@
                     	</div>
 
               			<div class="block has-text-left">
-                			<p>Un-tar these state files into your local <code class="has-background-dark">~/.qrl-testnet/data/</code> folder and start the node. This will start at the latest blockheight these files were made and only sync from there.</p>
+                			<p>Un-tar these state files into your local <code class="has-background-dark">~/.qrl-testnet/data/</code> folder and start the node. This will start at the latest blockheight these files were made and only sync from there.</p><br>
+                			<h5 class="is-size-5">Example:</h5>
+                			<code class="has-background-dark">tar xvf QRL_Mainnet_State.tar.gz && cp -r state/ ~/.qrl/data/ && start_qrl</code>
 
               			</div>
 						<div class="block has-text-centered">
-                			<h5 class="is-size-5">Example:</h5>
-                			<code class="has-background-dark">tar xvf QRL_Mainnet_State.tar.gz && cp -r state/ ~/.qrl/data/ && start_qrl</code>
                 		</div>
             		</div>        
 
-
+                 <div class="column is-centered">
+                        <div class="buttons is-centered">
+                            <a href="{{site.url}}{{site.baseurl}}/chain/#mainnet-chain" class="">
+                                <button class="button button-group is-large is-rounded is-uppercase has-text-weight-bold is-black is-outlined is-inverted">Mainnet State</button>
+                            </a>
+                            <a href="{{site.url}}{{site.baseurl}}/chain/#testnet-chain" class="">
+                                <button class="button button-group is-large is-rounded is-uppercase has-text-weight-bold is-black is-outlined is-inverted">Testnet State</button>
+                            </a>
+                        </div>
+                    </div>
 
         		</p>
             </div>
