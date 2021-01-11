@@ -16,7 +16,7 @@ hero-slug:
 # URL of Image of the Site
 site-image: /WhatATheme/assets/images/meta.jpg
 # Keywords of the Site
-site-keywords: QRL, Blockchain, Quantum Resistant, Cryptocurrency, Faucet, ledgerS
+site-keywords: QRL, Blockchain, Quantum Resistant, Cryptocurrency
 # URL for the Image of custom Favicon
 favicon-url: /assets/images/favicon.png
 default_faucet_amount: 100
