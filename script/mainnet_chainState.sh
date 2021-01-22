@@ -25,7 +25,9 @@ mkdir $stateDir -p
 rsync -a /home/$user/.qrl/data/state $stateDir
 
 # zip them up a little
-tar -czvf $uploadDir/$fileName --directory=$stateDir $stateDir/*
+#tar -czvf $uploadDir/$fileName --directory=$stateDir $stateDir/*
+cd $stateDir
+tar -czvf $uploadDir/$fileName state
 
 chainState=$(sudo -H -u $user /home/$user/.local/bin/qrl --json state)
 chainSize=$(du -hs /home/$user/.qrl/data/state/ | awk '{print $1}')
