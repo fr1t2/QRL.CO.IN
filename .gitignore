@@ -3,7 +3,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=jekyll,ruby
 
 ### Jekyll ###
-#_site/
+_site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
