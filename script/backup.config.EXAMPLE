@@ -1,0 +1,17 @@
+// ## Save this file as backup.config and fill in the details
+// # Access the config file with something like this. 
+// # FileLocation=`< "$HOME/qrl-tipbot/_config/config.json" jq -r .backup.location`
+// file in JSON format
+
+{ 
+  "bot_details" : {
+    "bot_name"  : "BOT_NAME",
+    "bot_id"  : "BOT_ID",
+    "bot_url" : "https://BOT_URL.COM",
+    "explorer_url" : "https://explorer.theqrl.org",
+    "bot_dir" : "/home/{$USER}/qrltips",
+    "bot_donationAddress" : "Q010500e9ec3de4d403d59be6ff329134c6d6fab4f94ea40eaa443aff47ab76350519e94fe9326b",
+    "ban_channel": "CHANNEL_NAME",
+    "ban_channel_id": "793588953995411506"
+  }
+}
