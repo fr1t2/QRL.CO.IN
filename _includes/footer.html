@@ -1,0 +1,74 @@
+            <div class="modal is-large">
+                <div class="modal-background">
+                </div>
+                <div class="modal-content">
+                    <hr class=" has-background-dark">
+                    <div class="columns">
+                        <div class="column">
+                            <h2 class="title is-3 is-uppercase has-text-weight-bold">
+                                Donate and Support
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column">
+                            <div class="field ">
+                                <div class="control">
+                                    <div class="tags  has-addons">
+                                        <span class="tag is-medium is-black">QRL:</span>
+                                        <span class="tag is-medium is-dark">{{ site.coin_address }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <div class="tags  has-addons">
+                                        <span class="tag is-medium is-black">BTC:</span>
+                                        <span class="tag is-medium is-dark">{{ site.BTC_address }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <div class="tags  has-addons">
+                                        <span class="tag is-medium is-black">ETH:</span>
+                                        <span class="tag is-medium is-dark">{{ site.ETH_address }}</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <button class="modal-close " aria-label="close" id="modal-close"></button>
+            </div>
+
+
+
+<footer id="footer">
+    <!--Footer Button-->
+    <!-- <div class="container has-text-centered has-background-grey-darker" id="backtotop">
+        <a class="has-text-white" onclick="window.scroll(0,0)">BACK TO TOP</a>
+    </div> -->
+    <!--Footer Main Section-->
+    <div class="has-background-grey-darker">
+
+    </div>
+    <div class="has-background-black has-text-centered has-text-white" id="credits">
+        <i class="far fa-copyright"></i> {{ "now" | date: "%Y" }} | <a href="{{ site.developed_by }}" target="_blank" rel="noopener noreferrer">{{ site.developed_by_name }}</a> - Building the Next Thing | <a id="coffee"> Donate</a>
+    </div>
+</footer>
+
+
+<script type="text/javascript">
+    $("#coffee").click(function() {
+  $(".modal").addClass("is-active");  
+});
+
+$(".modal-close").click(function() {
+   $(".modal").removeClass("is-active");
+});
+
+</script>

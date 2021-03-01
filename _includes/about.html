@@ -1,0 +1,133 @@
+<section class="hero is-fullheight is-grey has-text-centered " id="about">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-centered is-8 is-offset-2">
+                    <div class="block">
+                        <h2 class="title is-spaced  is-size-2 is-uppercase has-text-weight-bold">Tools for the Future</h2>
+                        <h3 class="subtitle is-4 "> Open and Secure</h3>
+                    </div>
+                    <div class="block ">
+                        <p class="block">
+                            Dedicated to bringing quantum resistant innovation to the masses. We plan to build open source free tools to interact with, and utilize the quantum resistant features of the<a target="_blank" href="{{ site.coin_site }}">{{ site.coin }} blockchain</a> helping secure the future. 
+                        </p>
+
+                    </div>
+                    <br>
+                    <div class="columns">
+                        <div class="column is-centered">
+                            <hr class="has-background-grey">
+                            <div class="block">
+                                <p class="title 
+                                    second-title
+                                    is-spaced 
+                                    is-4 
+                                    is-uppercase 
+                                    has-text-weight-bold ">
+                                    Strong Cryptography
+                                </p> 
+                                <p class="subtitle 
+                                    is-7">
+                                </p>
+                            </div>
+                            <div class="block">
+                             <p>Leveraging The {{site.coin}}'s implementation of NIST approved XMSS cryptography, we can secure the tools and systems that we build today for the future.</p>
+                            </div>
+                        </div>
+                        <div class="column is-centered">
+                            <hr class="has-background-grey">
+                            <div class="block">
+                                <h4 class="title 
+                                     second-title
+                                    is-spaced 
+                                    is-4 
+                                    is-uppercase 
+                                    has-text-weight-bold">
+                                    Innovative Solutions 
+                                </h4> 
+                                <p class="subtitle
+                                     is-7">
+                                </p>
+                            </div>
+                            <div class="block">
+                                <p>
+                                    Using a distributed, immutable ledger to power tools will change the future, bridging the gap of secure technology and innovative ideas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {% if page.url == "/" %}
+                    <br>
+                    <br>
+                    <hr>
+                    <div class="column ">
+                        <div class="block">
+                            <h2 class="title is-spaced  is-size-2 is-uppercase has-text-weight-bold">{{site.coin}} Bootstrap Files</h2>
+                            <h3 class="subtitle is-4 ">"The Blockchain"</h3>
+                        </div>
+                        <div class="block has-text-left">
+                            <p>
+                                {{ site.title }} is providing the state files that makeup the entire {{ site.coin }} blockchain, every on-chain transaction, sent coin, and mined block are represented in cryptographic glory! </p> 
+                        </div>
+                        <div class="block has-text-left">
+                            <p>
+                                We provide them here to help drastically speed up the syncing process for anyone who wishes to run a full {{site.coin}} node. Instead of fetching each block and cryptographically verifying it from peer nodes your node is connected to, these files allow a user to almost immediately have a functional QRL node up and running by providing these state files in a static <code class="has-background-dark">.tar.gz</code> file.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="column is-centered">
+                        <div class="buttons is-centered">
+                            <a href="{{site.url}}{{site.baseurl}}/chain" class="">
+                                <button class="button button-group is-large is-rounded is-uppercase has-text-weight-bold is-black is-outlined is-inverted">{{ site.coin}} Blockchain State</button>
+                            </a>
+                        </div>
+                    </div>
+                    {% endif %}
+                    <div class="column is-centered">
+                        <div class="block is-size-6 ">                        
+                                <hr class="has-background-grey">
+                            <p>
+                            QRL.co.in is not an official project of The QRL. If you would like to contribute or have interest building the next cool tools<a href="{{site.url}}{{site.baseurl}}/about/#contact">
+                                    Get In Touch!
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Buttons based on location 
+                    {% if page.url == "/" %}
+                        <div class="column is-8 is-offset-2">
+                        <a href="{{site.url}}{{site.baseurl}}/#faucet" class="button is-large is-rounded is-uppercase has-text-weight-bold is-black is-outlined is-inverted ">
+                                <span>
+                                    {{ site.coin }} Faucet
+                                </span>
+                                <span class="icon is-small"> 
+                                    <i class="fas fa-faucet"></i>
+                                </span>
+                                <span>
+                                 Coming Soon
+                                </span>
+                            </a>
+                        </div>
+                    {% elsif page.url == "/about" %}
+                        <div class="column is-8 is-offset-2">
+                        <a href="{{site.url}}{{site.baseurl}}/faucet" class="button is-large is-rounded is-uppercase has-text-weight-bold is-black is-outlined is-inverted ">
+                                <span>
+                                    {{ site.coin }} Faucet
+                                </span>
+                                <span class="icon is-small"> 
+                                    <i class="fas fa-faucet"></i>
+                                </span>
+                            </a>
+                        </div>
+                    {% endif %}
+-->
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>

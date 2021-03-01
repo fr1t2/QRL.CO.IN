@@ -1,0 +1,122 @@
+# WhatATheme
+markdown: kramdown
+
+# URL of the Site
+url: 'https://qrl.co.in'
+# Base URL of the Site (i.e., Name of the Repository in which the Site is hosted)
+baseurl: 
+permalink: pretty
+
+# Title of the Site
+title: QRL.CO.IN
+# Description of the Site
+description: Innovative tools | quantum resistance
+# Paragraph in the main content hero section
+hero-slug:  
+# URL of Image of the Site
+site-image: /WhatATheme/assets/images/meta.jpg
+# Keywords of the Site
+site-keywords: QRL, Blockchain, Quantum Resistant, Cryptocurrency
+# URL for the Image of custom Favicon
+favicon-url: /assets/images/favicon.png
+default_faucet_amount: 100
+# URL of the Image of Custom Hero Image (i.e., the image in the background of the very first section of the Homepage)
+# heroimage: https://images.pexels.com/photos/220444/pexels-photo-220444.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
+heroimage: /assets/images/dots.png
+# include footer text for main hero.
+hero-footer: 
+
+# Blockchain info
+
+# Faucet info
+faucet_address:
+
+# Coin short code
+coin: QRL
+explorer-url: https://explorer.theqrl.org
+wallet-url: https://wallet.theqrl.org
+testnet-explorer-url: https://testnet-explorer.theqrl.org
+testnet-wallet-url: https://testnet-wallet.theqrl.org
+coin_repo: https://github.com/theqrl/qrl
+coin_site: https://theqrl.org/
+
+
+# Donation Info
+coin_address: Q010500542771ce655a898ce85d66adb07d6c5db24323fc3d720079d454133289ee8dc907bfe53a
+BTC_address: 3MthYPviGSMi8Vyz3nHrQEPBDWaibDrPyC
+ETH_address: "0x310E7B86027B204BBB1A6BDa8fdEB44580d1A435"
+
+# site code info
+
+developed_by: #https://merkletreellc.com
+developed_by_name: Merkle Tree
+contact-statement: QRL.co.in was started with big ambitions to bring secure tools to the masses. We are excited about future thinking projects and innovation that propels everyone into a better future.
+
+# Social Media and Contact
+# If you don't want to use any icon, you can leave them blank.
+email: info@qrl.co.in
+github_username:  
+
+# Google Analytics
+google-analytics: UA-113155333-1
+
+# Disqus
+disqus-shortname: 
+
+# Name of the Author
+author-name: Fr1t2
+# URL for the Image of the Author
+author-image: https://avatars3.githubusercontent.com/u/22141056?s=400&u=5fd53ec7cc3c000d61aba8f4ee6f99fafa5e38c6&v=4
+# 60 Words About the Author
+author-about: 
+# URL to the Author's Profile (i.e., Github, Twitter, Stackoverflow, etc)
+author-url: https://fr1t2/com
+
+# SASS
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Build settings
+plugins:
+  - jekyll-admin
+  - jekyll-feed
+
+# Permalink
+#permalink: "blog/:title"
+
+# Compress
+compress_html:
+  clippings: all
+
+# Defaults
+defaults:
+  -
+    scope:
+      type: 'posts'
+    values:
+      layout: post
+      post-image: ""
+      description: ""
+      tags:
+        - ""
+  -
+    scope:
+      type: 'pages'
+    values:
+      layout: page
+
+# Exclude
+exclude:
+  - script/
+  - .circleci/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

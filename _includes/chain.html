@@ -1,0 +1,53 @@
+<section class="hero is-fullheight is-grey  " id="chain">
+    <div class="hero-body">
+		<div class="columns is-centered">
+			<div class="block is-size-6 ">                        
+                <p>
+            		<div class="column is-8 is-offset-2 has-text-centered">
+						<div class="block">
+            	            <h2 class="title is-spaced  is-size-2 is-uppercase has-text-weight-bold">{{site.coin}} Bootstrap Files</h2>
+                	        <h3 class="subtitle is-4 ">"The Blockchain"</h3>
+                    	</div>
+
+			            
+                        <hr class="has-background-grey">
+                    </div>
+            		<div class="column is-8 is-offset-2 has-text-left">
+              			
+              			<div class="block has-text-left">
+              				<p>
+                				The most secure approach is to allow the node the time to fully sync from scratch. This ensures your local chain is accurate to all other modes and that you are not running a forked chain. If you don't need this security, you can use these files to bootstrap your node setup. This may take a significant amount of time depending on bandwidth and hardware, up to a week to fully sync this data.
+                			</p>
+              			</div>
+              		</div>
+            		<div class="column is-8 is-offset-2 has-text-left">
+						<div class="block">
+            	            <h4 class="is-spaced  is-size-4 is-uppercase has-text-weight-bold">How to Use</h4>
+                    	</div>
+
+              			<div class="block has-text-left">
+                			<p>Un-tar these state files into your local <code class="has-background-dark">~/.qrl-testnet/data/</code> folder and start the node. This will start at the latest blockheight these files were made and only sync from there.</p><br>
+                			<h5 class="is-size-5">Example:</h5>
+                			<code class="has-background-dark">tar xvf QRL_Mainnet_State.tar.gz && cp -r state/ ~/.qrl/data/ && start_qrl</code>
+
+              			</div>
+						<div class="block has-text-centered">
+                		</div>
+            		</div>        
+
+                 <div class="column is-centered">
+                        <div class="buttons is-centered">
+                            <a href="{{site.url}}{{site.baseurl}}/chain/#mainnet-chain" class="">
+                                <button class="button button-group is-large is-rounded is-uppercase has-text-weight-bold is-black is-outlined is-inverted">Mainnet State</button>
+                            </a>
+                            <a href="{{site.url}}{{site.baseurl}}/chain/#testnet-chain" class="">
+                                <button class="button button-group is-large is-rounded is-uppercase has-text-weight-bold is-black is-outlined is-inverted">Testnet State</button>
+                            </a>
+                        </div>
+                    </div>
+
+        		</p>
+            </div>
+        </div>
+	</div>
+</section>
