@@ -109,6 +109,7 @@ defaults:
 # Exclude
 exclude:
   - script/
+  - .circleci/
   - .sass-cache/
   - .jekyll-cache/
   - gemfiles/
