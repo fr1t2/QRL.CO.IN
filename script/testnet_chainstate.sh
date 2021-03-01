@@ -22,6 +22,7 @@ user="fr1t2"
 accessKey_pub=""
 accessKey_sec=""
 host_bucket=""
+bucketName="testnet"
 
 mkdir $stateDir -p 
 
@@ -94,11 +95,11 @@ echo "" > ${uploadDir}/index.html
 
 # add upload to digitalocean spaces here
 # upload the stats data
-s3cmd put ${uploadDir}/${statsFileName} s3://${statsFileName} --host-bucket $host_bucket --access_key $accessKey_pub --secret_key $accessKey_sec -P
+s3cmd put ${uploadDir}/${statsFileName} s3://${bucketName} --host-bucket $host_bucket --access_key $accessKey_pub --secret_key $accessKey_sec -P
 # upload the tar file
-s3cmd put ${uploadDir}/${fileName} s3://${fileName} --host-bucket $host_bucket --access_key $accessKey_pub --secret_key $accessKey_sec -P
+s3cmd put ${uploadDir}/${fileName} s3://${bucketName} --host-bucket $host_bucket --access_key $accessKey_pub --secret_key $accessKey_sec -P
 # Upload the checksum file
-s3cmd put ${uploadDir}/${checkSumFileName} s3://${checkSumFileName} --host-bucket $host_bucket --access_key $accessKey_pub --secret_key $accessKey_sec -P
+s3cmd put ${uploadDir}/${checkSumFileName} s3://${bucketName} --host-bucket $host_bucket --access_key $accessKey_pub --secret_key $accessKey_sec -P
 
 
 # make sure you own the folder or are a part of the www-data group

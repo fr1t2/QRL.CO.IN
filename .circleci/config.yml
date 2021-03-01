@@ -24,33 +24,33 @@ jobs:
       - run:
           name: Jekyll build
           command: bundle exec jekyll build
-#      - run:
-#          name: HTMLProofer tests
-#          command: |
-#            bundle exec htmlproofer ./_site \
-#              --allow-hash-href \
-#              --check-favicon  \
-#              --check-html \
-#              --disable-external
+      - run:
+          name: HTMLProofer tests
+          command: |
+            bundle exec htmlproofer ./_site \
+              --allow-hash-href \
+              --check-favicon  \
+              --check-html \
+              --disable-external
       - persist_to_workspace:
           root: ./
           paths:
             - _site
-  deploy:
-    <<: *defaults
-    docker:
-      - image: circleci/python:3.6.3
-    environment:
-      S3_BUCKET_NAME: <<YOUR BUCKET NAME HERE>>
-    steps:
-      - attach_workspace:
-          at: ./
-      - run:
-          name: Install AWS CLI
-          command: pip install awscli --upgrade --user
-      - run:
-          name: Upload to s3
-          command: ~/.local/bin/aws s3 sync ./_site s3://$S3_BUCKET_NAME/ --delete --acl public-read
+#  deploy:
+#    <<: *defaults
+#    docker:
+#      - image: circleci/python:3.6.3
+#    environment:
+#      S3_BUCKET_NAME: <<YOUR BUCKET NAME HERE>>
+#    steps:
+#      - attach_workspace:
+#          at: ./
+#      - run:
+#          name: Install AWS CLI
+#          command: pip install awscli --upgrade --user
+#      - run:
+#          name: Upload to s3
+#          command: ~/.local/bin/aws s3 sync ./_site s3://$S3_BUCKET_NAME/ --delete --acl public-read
 workflows:
   version: 2
   test-deploy:
