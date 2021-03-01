@@ -1,0 +1,105 @@
+<nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation" id="navbar">
+    <div class="container">
+        <!-- logo or branding image on left side -->
+        <div class="navbar-brand ">
+            <figure class="image is-32x32 mt-2">
+                <a href="{% if page.layout == 'default' %}
+                {{site.url}}{{site.baseurl}}/#
+                {% else %}
+                {{site.url}}{{site.baseurl}}/
+                {% endif %}"><img src="/assets/images/favicon.png"></a>
+            </figure>
+            <a class="navbar-item"
+                href="{% if page.layout == 'default' %}
+                {{site.url}}{{site.baseurl}}/#
+                {% else %}
+                {{site.url}}{{site.baseurl}}/
+                {% endif %}">
+                <strong>  {{site.title}}</strong>
+            </a>
+            <div class="navbar-burger" data-target="navbar-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <!-- children of navbar-menu must be navbar-start and/or navbar-end -->
+        <div class="navbar-menu is-dark" id="navbar-menu">
+            <!-- navbar items | left side -->
+            <div class="navbar-start">
+            </div><!--  -->
+            <!-- navbar items | right side -->
+            <div class="navbar-end">
+                <a class="navbar-item {% if page.layout == 'default' %}is-active{% endif %}"
+                    href="{% if page.layout == 'default' %}{{site.url}}{{site.baseurl}}/#{% else %}{{site.url}}{{site.baseurl}}/{% endif %}">HOME</a>
+
+                {% if page.url == "/" %}
+                    <a class="navbar-item" href="{{site.url}}{{site.baseurl}}/#about">ABOUT</a>
+                {% endif %}
+                {% if page.url == "/about/" %}
+                    <a class="navbar-item is-active" href="{{site.url}}{{site.baseurl}}/about">ABOUT</a>
+                {% endif %}
+
+                {% unless page.url == "/" or page.url == "/about/" %}
+                    <a class="navbar-item" href="{{site.url}}{{site.baseurl}}/about">ABOUT</a>
+                {% endunless %}
+
+<!--
+                {% if page.url == "/" %}
+                    <a class="navbar-item" href="{{site.url}}{{site.baseurl}}/#faucet">FAUCET</a>
+                {% endif %}
+
+                {% if page.url == "/faucet/" %}
+                    <a class="navbar-item is-active" href="{{site.url}}{{site.baseurl}}/faucet">FAUCET</a>
+                {% endif %}
+                {% unless page.url == "/" or page.url == "/faucet/" %}
+                    <a class="navbar-item" href="{{site.url}}{{site.baseurl}}/faucet">FAUCET</a>
+                {% endunless %}
+--> 
+
+                {% unless page.url == "/chain/" %}
+                    <a class="navbar-item" href="{{site.url}}{{site.baseurl}}/chain">CHAIN</a>
+                {% endunless %}
+                {% if page.url == "/chain/" %}
+                    <a class="navbar-item is-active" href="{{site.url}}{{site.baseurl}}/chain">CHAIN</a>
+                {% endif %}
+
+<!--
+                {% if page.url == "/about/#contact/" %}
+                    <a class="navbar-item is-active" href="{{site.url}}{{site.baseurl}}/about/#contact">CONTACT</a>
+                {% endif %}
+
+                {% unless page.url == "/about/#contact/" %}
+                    <a class="navbar-item i" href="{{site.url}}{{site.baseurl}}/about/#contact">CONTACT</a>
+                {% endunless %}
+
+-->
+              <!--  <a class="navbar-item {% if page.layout == 'blog' %}is-active{% endif %}"
+                    href="{{site.url}}{{site.baseurl}}/blog">BLOG</a>-->
+            </div>
+
+        </div>
+    </div>
+</nav>
+<!-- Bulma Navbar JS -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        /* Get all "navbar-burger" elements */
+        var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        /* Check if there are any navbar burgers */
+        if ($navbarBurgers.length > 0) {
+            /* Add a click event on each of them */
+            $navbarBurgers.forEach(function ($el) {
+                $el.addEventListener('click', function () {
+                    /* Get the target from the "data-target" attribute */
+                    var target = $el.dataset.target;
+                    var $target = document.getElementById(target);
+                    /* Toggle the class on both the "navbar-burger" and the "navbar-menu" */
+                    $el.classList.toggle('is-active');
+                    $target.classList.toggle('is-active');
+                });
+            });
+        }
+    });
+</script>
