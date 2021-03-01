@@ -45,19 +45,6 @@
                     <a class="navbar-item" href="{{site.url}}{{site.baseurl}}/about">ABOUT</a>
                 {% endunless %}
 
-<!--
-                {% if page.url == "/" %}
-                    <a class="navbar-item" href="{{site.url}}{{site.baseurl}}/#faucet">FAUCET</a>
-                {% endif %}
-
-                {% if page.url == "/faucet/" %}
-                    <a class="navbar-item is-active" href="{{site.url}}{{site.baseurl}}/faucet">FAUCET</a>
-                {% endif %}
-                {% unless page.url == "/" or page.url == "/faucet/" %}
-                    <a class="navbar-item" href="{{site.url}}{{site.baseurl}}/faucet">FAUCET</a>
-                {% endunless %}
---> 
-
                 {% unless page.url == "/chain/" %}
                     <a class="navbar-item" href="{{site.url}}{{site.baseurl}}/chain">CHAIN</a>
                 {% endunless %}
@@ -65,18 +52,6 @@
                     <a class="navbar-item is-active" href="{{site.url}}{{site.baseurl}}/chain">CHAIN</a>
                 {% endif %}
 
-<!--
-                {% if page.url == "/about/#contact/" %}
-                    <a class="navbar-item is-active" href="{{site.url}}{{site.baseurl}}/about/#contact">CONTACT</a>
-                {% endif %}
-
-                {% unless page.url == "/about/#contact/" %}
-                    <a class="navbar-item i" href="{{site.url}}{{site.baseurl}}/about/#contact">CONTACT</a>
-                {% endunless %}
-
--->
-              <!--  <a class="navbar-item {% if page.layout == 'blog' %}is-active{% endif %}"
-                    href="{{site.url}}{{site.baseurl}}/blog">BLOG</a>-->
             </div>
 
         </div>
