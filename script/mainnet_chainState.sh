@@ -93,10 +93,10 @@ echo "" > ${uploadDir}/index.html
 
 
 # add upload to digitalocean spaces here
-# upload the stats data
-s3cmd put ${uploadDir}/${statsFileName} s3://${statsFileName} --host-bucket $host_bucket --access_key $accessKey_pub --secret_key $accessKey_sec -P
 # upload the tar file
 s3cmd put ${uploadDir}/${fileName} s3://${fileName} --host-bucket $host_bucket --access_key $accessKey_pub --secret_key $accessKey_sec -P
+# upload the stats data
+s3cmd put ${uploadDir}/${statsFileName} s3://${statsFileName} --host-bucket $host_bucket --access_key $accessKey_pub --secret_key $accessKey_sec -P
 # Upload the checksum file
 s3cmd put ${uploadDir}/${checkSumFileName} s3://${checkSumFileName} --host-bucket $host_bucket --access_key $accessKey_pub --secret_key $accessKey_sec -P
 
