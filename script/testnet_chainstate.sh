@@ -7,36 +7,50 @@
 
 # This script requires 
 # - a fully synced node
-# - a QRL wallet with funds enough for the TX fee
-# - 
+# - s3cmd setup for the digitalocean spaces
 # 
 
+## Change these settings for your setup!
 epochNow=`date +%s`
-uploadDir=/var/www/html/qrl.co.in/assets/state
-stateDir=/var/www/html/qrl/testnet_state
+uploadDir=/media/fr1t2/5BFFAC385E084F02/crypto/qrl/chainState/upload/
+stateDir=/media/fr1t2/5BFFAC385E084F02/crypto/qrl/chainState/statesync/
 fileName="QRL_Testnet_State.tar.gz"
 checkSumFileName="Testnet_State_Checksums.txt"
 statsFileName="QRL_Testnet_Node_Stats.json"
 user="fr1t2"
-
-accessKey_pub=""
-accessKey_sec=""
-host_bucket=""
 bucketName="testnet"
+spaces='qrl-chain'
 
 mkdir $stateDir -p 
 
-# copy the files over
-rsync -a /home/$user/.qrl-testnet/data/state $stateDir
+chainState=$(sudo -H -u fr1t2 /home/fr1t2/.local/bin/qrl --json --port_pub 19010 state)
+echo "chain state"
+chainSize=$(du -hs /home/fr1t2/.qrl-testnet/data/state/ | awk '{print $1}')
 
+# stop the network prior to tar
+screenSession=$(sudo -u fr1t2 screen -ls |grep testnet |cut -f1 -d\.)
+sudo -u fr1t2 screen -XS $screenSession quit
+echo "Stopping node... ${screenSession}"
+echo "Sleeping for 1 min"
+sleep 60
+echo "Awake, rsync things around"
+# copy the files over
+rsync -a /home/fr1t2/.qrl-testnet/data/state $stateDir
+
+# restart the node
+sudo -u fr1t2 screen -Sdm qrl-testnet-node /home/fr1t2/.local/bin/start_qrl --network-type testnet
+echo "Sleeping for 1 min"
+sleep 60
+echo "Awake, tar it up"
 # zip them up a little
 #tar --directory=$stateDir -czvf $uploadDir/$fileName $stateDir/*
 
 cd $stateDir
 tar -czvf $uploadDir/$fileName state/
-
-chainState=$(sudo -H -u $user /home/$user/.local/bin/qrl --json --host 127.0.0.1 --port_pub 19020 state)
-chainSize=$(du -hs /home/$user/.qrl-testnet/data/state/ | awk '{print $1}')
+echo "ziped"
+chainState=$(sudo -H -u fr1t2 /home/fr1t2/.local/bin/qrl --json --port_pub 19010 state)
+echo "chain state"
+chainSize=$(du -hs /home/fr1t2/.qrl-testnet/data/state/ | awk '{print $1}')
 tarFileSize=$(du -hs $uploadDir/$fileName | awk '{print $1}')
 sha3512=`openssl dgst -sha3-512 ${uploadDir}/${fileName} | awk '{print $2}'`
 sha3256=`openssl dgst -sha3-256 ${uploadDir}/${fileName} | awk '{print $2}'`
@@ -94,13 +108,10 @@ echo "]" >> ${uploadDir}/${statsFileName}
 echo "" > ${uploadDir}/index.html
 
 # add upload to digitalocean spaces here
-# upload the stats data
-s3cmd put ${uploadDir}/${statsFileName} s3://${bucketName} --host-bucket $host_bucket --access_key $accessKey_pub --secret_key $accessKey_sec -P
+
 # upload the tar file
-s3cmd put ${uploadDir}/${fileName} s3://${bucketName} --host-bucket $host_bucket --access_key $accessKey_pub --secret_key $accessKey_sec -P
+s3cmd put ${uploadDir}/${fileName} s3://${spaces}/${bucketName}/  -P
+## upload the stats data
+s3cmd put ${uploadDir}/${statsFileName} s3://${spaces}/${bucketName}/ -P
 # Upload the checksum file
-s3cmd put ${uploadDir}/${checkSumFileName} s3://${bucketName} --host-bucket $host_bucket --access_key $accessKey_pub --secret_key $accessKey_sec -P
-
-
-# make sure you own the folder or are a part of the www-data group
-sudo chown www-data:www-data $uploadDir -R
+s3cmd put ${uploadDir}/${checkSumFileName} s3://${spaces}/${bucketName}/ -P

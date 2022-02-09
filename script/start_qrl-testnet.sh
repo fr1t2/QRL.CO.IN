@@ -6,8 +6,8 @@
 ## Run this script from crontab on @reboot
 #
 #
-source "/home/$USER/.profile"
+#source "/home/$USER/.profile"
 
 # uncomment hte next line for testnet,
-screen -Sdm testnetqrl start_qrl --network-type testnet
+screen -Sdm qrl-testnet-node start_qrl --network-type testnet
 #screen -Sdm qrl start_qrl
