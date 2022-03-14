@@ -71,6 +71,13 @@ echo "["`date -u`"] Transaction Verification: https://testnet-explorer.theqrl.or
 # Grab the chain state
 CHAIN_STATE=$(sudo -H -u $user /home/$user/.local/bin/qrl --json --port_pub 19019 state)
 
+# remove the old stats file
+if [ -f $STATS_FILE ]; then
+  echo "["`date -u`"] Removing old stats file from: $STATS_FILE" | tee -a $BOOTSTRAP_LOGS  
+  rm -rf $STATS_FILE
+fi
+
+echo "["`date -u`"] Writing NEW stats file to: $STATS_FILE" | tee -a $BOOTSTRAP_LOGS  
 cat << EoF > $STATS_FILE
 [
     {"info":
