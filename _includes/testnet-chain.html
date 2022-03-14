@@ -170,7 +170,7 @@
         document.getElementById("testnet-Unix_Timestamp").innerHTML = JSON.parse(JSON.stringify(testnetjson[1].Unix_Timestamp));
         document.getElementById("testnet-Uncompressed_Chain_Size").innerHTML = JSON.parse(JSON.stringify(testnetjson[2].Uncompressed_Chain_Size));
         document.getElementById("testnet-Notarization").innerHTML = '<a href="' + JSON.parse(JSON.stringify(testnetjson[4].validation)) + '" target="_blank"><u>' + JSON.parse(JSON.stringify(testnetjson[4].tx_id)) +'</u></a>';
-        document.getElementById("testnet-Address").innerHTML = JSON.parse(JSON.stringify(json[4].address));
+        document.getElementById("testnet-Address").innerHTML = JSON.parse(JSON.stringify(testnetjson[4].address));
         // document.getElementById("testnet-Tar_FileSize").innerHTML = JSON.parse(JSON.stringify(testnetjson[3].Tar_FileSize));
         console.log(JSON.stringify(testnetjson));
       </script>
