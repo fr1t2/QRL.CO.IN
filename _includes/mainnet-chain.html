@@ -166,7 +166,7 @@
         document.getElementById("version").innerHTML = JSON.parse(JSON.stringify(json[0].info.version));
         document.getElementById("Unix_Timestamp").innerHTML = JSON.parse(JSON.stringify(json[1].Unix_Timestamp));
         document.getElementById("Uncompressed_Chain_Size").innerHTML = JSON.parse(JSON.stringify(json[2].Uncompressed_Chain_Size));
-        document.getElementById("Notarization").innerHTML = '<a href="' + JSON.parse(JSON.stringify(json[4].validation)) + '"><u>' + JSON.parse(JSON.stringify(json[4].tx_id)) +'</u></a>';        
+        document.getElementById("Notarization").innerHTML = '<a href="' + JSON.parse(JSON.stringify(json[4].validation)) + '" target="_blank"><u>' + JSON.parse(JSON.stringify(json[4].tx_id)) +'</u></a>';        
         document.getElementById("Address").innerHTML = JSON.parse(JSON.stringify(json[4].address));
         // document.getElementById("Tar_FileSize").innerHTML = JSON.parse(JSON.stringify(json[3].Tar_FileSize));
         console.log(JSON.stringify(json));
