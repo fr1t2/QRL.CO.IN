@@ -26,4 +26,4 @@ echo "Notarize Complete!" | tee -a $BOOTSTRAP_LOGS
 ## Load to the Cloud
 echo "Upload to Cloud....." | tee -a $BOOTSTRAP_LOGS  
 sudo -H -u $user /home/$user/QRL.CO.IN/script/cloudUp-mainnet.sh
-echo "Upload to Cloud Complete! | tee -a $BOOTSTRAP_LOGS  
+echo "Upload to Cloud Complete!" | tee -a $BOOTSTRAP_LOGS  

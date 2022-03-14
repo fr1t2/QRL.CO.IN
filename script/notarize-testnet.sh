@@ -39,7 +39,7 @@ fi
 
 if [[ ! -f $QRL_DIR/$QRL_WALLET ]]; then
   echo "["`date -u`"] Wallet not found! Generating New Address at $QRL_DIR/$QRL_WALLET" | tee -a $BOOTSTRAP_LOGS
-  qrl-cli create-wallet -f $QRL_DIR/$QRL_WALLET -h 14 # generate qrl address using the qrl-cli, tree height 14
+  sudo -H -u $user qrl-cli create-wallet -f $QRL_DIR/$QRL_WALLET -h 14 # generate qrl address using the qrl-cli, tree height 14
   wallet_success=$?
   echo "["`date`"] create-wallet exit code: $wallet_success" | tee -a $BOOTSTRAP_LOGS
   if [[ "$wallet_success" = "1" ]]; then
@@ -52,7 +52,7 @@ QRL_ADDRESS=$(cat $QRL_DIR/$QRL_WALLET |jq .[0].address | tr -d '"')
 echo "["`date -u`"] QRL Address: $QRL_ADDRESS" |tee -a $BOOTSTRAP_LOGS
 
 # Get next OTS
-OTS_KEY=$(qrl-cli ots $QRL_ADDRESS -t -j |grep next_key |jq .[0].next_key)
+OTS_KEY=$(sudo -H -u $user qrl-cli ots $QRL_ADDRESS -t -j |grep next_key |jq .[0].next_key)
 echo "["`date -u`"] Next unused OTS key: $OTS_KEY" |tee -a $BOOTSTRAP_LOGS
 
 # Get shasum of file
@@ -61,7 +61,7 @@ echo "["`date -u`"] sha256sum: $SHASUM" |tee -a $BOOTSTRAP_LOGS
 echo "["`date -u`"] Notarizing file on-chain" |tee -a $BOOTSTRAP_LOGS
 
 # Notarize shasum of checksum file
-NOTARIZE=$(qrl-cli notarize $SHASUM -t -M "https://QRL.CO.IN Chain State" -w $QRL_DIR/$QRL_WALLET -i $OTS_KEY -j )
+NOTARIZE=$(sudo -H -u $user qrl-cli notarize $SHASUM -t -M "https://QRL.CO.IN Chain State" -w $QRL_DIR/$QRL_WALLET -i $OTS_KEY -j )
 echo "["`date -u`"] Notarization complete:" |tee -a $BOOTSTRAP_LOGS
 # Generate stats file
 TXID=$(echo $NOTARIZE |jq .[0].tx_id | tr -d '"')
