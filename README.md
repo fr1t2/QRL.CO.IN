@@ -10,13 +10,20 @@
 The chain data is served from a link out of digital ocean https://cloud.digitalocean.com/spaces/qrl-chain and hosted on https://qrl.co.in/chain for the public to download.
 
 
-This data is uploaded form a server running the QRL node software. The node is stopped, state files `rsync` over to a backup directory where they are `tar`'d up, the hashsums are taken and node stats recorded, then all files are sent up to the cloud CDN for content serving to the community.
+This data is uploaded form a server running the QRL node software. The node is stopped, state files `rsync` over to a backup directory where they are `tar`'d up, the hash sums are taken and node stats recorded, then all files are sent up to the cloud CDN for content serving to the community.
 
 
 
 ## Web Configuration 
 
-Point the web to these files for serving. 
+This is a Jekyll site, running in Github pages. Update this Repo to update the site.
+
+> Development setup is simple, follow Jekyll instructions to bundle your way into a running live site.
+
+
+## Chain State Files
+
+Point links for mainnet and testnet chain files to these links for serving. 
 
 > There are custom COORS settings that allow this to be served from the site without cross origin issues. See the settings in the digital ocean spaces dashboard for more.
 
@@ -58,6 +65,26 @@ Point the web to these files for serving.
 
 ## Uploading files
 
+The chain state and related information is created through a number of scripts.
+
+#### Mainnet Scripts
+
+| Script | Link | Use |
+| --- | --- | --- |
+| CreateQRLBootstrap.sh | [script/QRL_bootstrap/CreateQRLBootstrap.sh](script/QRL_bootstrap/CreateQRLBootstrap.sh) | Creates a backup of the chain state files (blockchain) |
+| notarize-mainnet.sh | [script/notarize-mainnet.sh](script/notarize-mainnet.sh) | Notarizes the checksums file |
+| cloudUp-mainnet.sh | [script/cloudUp-mainnet.sh](script/cloudUp-mainnet.sh) | Uploads all of the files to the cloud location to serve |
+| mainnet-chain.sh | []() | Combination script pulling all functions together into one. |
+
+#### Testnet Scripts
+
+| Script | Link | Use |
+| --- | --- | --- |
+| CreateQRLBootstrap_testnet.sh | [script/QRL_bootstrap/CreateQRLBootstrap_testnet.sh](script/QRL_bootstrap/CreateQRLBootstrap_testnet.sh) | Creates a backup of the chain state files (blockchain) |
+| notarize-testnet.sh | [script/notarize-testnet.sh](script/notarize-testnet.sh) | Notarizes the checksums file |
+| cloudUp-testnet.sh | [script/cloudUp-testnet.sh](script/cloudUp-testnet.sh) | Uploads all of the files to the cloud location to serve |
+| testnet-chain.sh | []() | Combination script pulling all functions together into one. |
+
 Setup the s3cmd following this guide:
 
 https://docs.digitalocean.com/products/spaces/resources/s3cmd/
@@ -70,35 +97,66 @@ s3cmd put file.txt s3://spacename/path/
 
 Will use the endpoint, and credentials setup during the configuration.
 
+### bootstrap
 
-### Upload Script
+cd into the bootstrap submodule at `script/QRL_bootstrap` and run the following
 
-The scripts here for gathering the blockchain data and uploading can be [found in the script directory](/scripts) and ran from crontab. 
+```bash
+git submodule init
+git submodule update 
+```
 
-Both mainnet and testnet scripts are provided. 
+#### Mainnet 
 
-#### Configure
+```bash
+./script/QRL_bootstrap/CreateQRLBootstrap.sh
+```
+#### Testnet 
 
-These require some configuration to work, and need to be tailored to individual installs. 
+```bash
+./script/QRL_bootstrap/CreateQRLBootstrap-testnet.sh
+```
 
-```bash 
-# Directory for final tar files to upload
-uploadDir=/home/$USER/chainstate/upload/ 
-# Where to send the copied chain files to prior to compressing
-stateDir=/home/$USER/chainstate/statesync/ 
-# User running the commands
-user="fr1t2"
+### Notarize
+
+Notarize the checksums on the chain
+
+#### Mainnet 
+
+```bash
+./script/notarize-mainnet.sh
+```
+
+#### Testnet 
+
+```bash
+./script/notarize-testnet.sh
 ```
 
 
-#### Run the Scripts
+### Upload Script
 
-`./script/mainnet_chainstate.sh`
+Using the s3cmd upload the files to the cloud
 
-This takes awhile to run and upload mainnet files. Currently running once a week on Sunday. 
+#### Mainnet 
+
+```bash
+./script/cloudUp-mainnet.sh
+```
+
+#### Testnet
+
+```bash
+./script/cloudUp-testnet.sh
+```
+
 
 
 #### Crontab Entries
+
+Using the combined script, compress, notarize and upload all of the files at once
+
+
 
  ```
  #crontab entry to sync the chainstate
