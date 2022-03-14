@@ -12,7 +12,7 @@
                 <div class="control">
                   <div class="tags  has-addons">
                     <span class="tag is-medium is-dark">Mainnet State</span>
-                    <span class="tag is-medium is-dark"><a href="https://cdn.qrl.co.in/mainnet/QRL_Mainnet_State.tar.gz">QRL_Mainnet_State.tar.gz</a></span>
+                    <span class="tag is-medium is-dark"><a href="https://cdn.qrl.co.in/mainnet/QRL_Mainnet_State.tar.gz"><u>QRL_Mainnet_State.tar.gz</u></a></span>
                     <!-- <span class="tag is-medium is-dark" id="Tar_FileSize"></span> -->
                   </div>
                 </div>
@@ -25,13 +25,30 @@
                 <div class="control">
                   <div class="tags  has-addons">
                     <span class="tag is-medium is-dark">Mainnet Checksums</span>
-                    <span class="tag is-medium is-dark"><a href="https://cdn.qrl.co.in/mainnet/Mainnet_State_Checksums.txt">Checksums.txt</a></span>
+                    <span class="tag is-medium is-dark"><a href="https://cdn.qrl.co.in/mainnet/Mainnet_State_Checksums.txt"><u>Checksums.txt</u></a></span>
                   </div>
                 </div>
               </div>
+              <hr>
+              <h3 class="title is-size-4 is-spaced">Chain Checksum Notarization</h3>
+              <p class="subtitle is-6">Verification provided by the QRL Notarization system.</p>
+              <div class="field is-grouped is-grouped-multiline">
+                <div class="control">
+                  <div class="tags  has-addons">
+                    <span class="tag is-medium is-black">Notarization Tx ID:</span>
+                    <span class="tag is-medium is-dark" id="Notarization"></span>
+                  </div>
+                </div>
+                <div class="control">
+                  <div class="tags  has-addons">
+                    <span class="tag is-medium is-black">Verification Address:</span>
+                    <span class="tag is-medium is-dark" id="Address"></span>
+                  </div>
+                </div>
+              </div>
+              <p>Check the notarization to verify the copy of the checksum file is identical to the upload. Follow the link below and verify by uploading the <code>Testnet_State_Checksums.txt</code> file to the QRL Block Explorer to verify authenticity.</p>
             </div>
           </div>
-
           <div class="columns is-centered is-gapless">
             <div class="column is-8">
               <hr>
@@ -149,6 +166,8 @@
         document.getElementById("version").innerHTML = JSON.parse(JSON.stringify(json[0].info.version));
         document.getElementById("Unix_Timestamp").innerHTML = JSON.parse(JSON.stringify(json[1].Unix_Timestamp));
         document.getElementById("Uncompressed_Chain_Size").innerHTML = JSON.parse(JSON.stringify(json[2].Uncompressed_Chain_Size));
+        document.getElementById("Notarization").innerHTML = '<a href="' + JSON.parse(JSON.stringify(json[4].validation)) + '"><u>' + JSON.parse(JSON.stringify(json[4].tx_id)) +'</u></a>';        
+        document.getElementById("Address").innerHTML = JSON.parse(JSON.stringify(json[4].address));
         // document.getElementById("Tar_FileSize").innerHTML = JSON.parse(JSON.stringify(json[3].Tar_FileSize));
         console.log(JSON.stringify(json));
       </script>
