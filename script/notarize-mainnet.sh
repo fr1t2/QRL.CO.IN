@@ -95,7 +95,7 @@ cat << EoF > $STATS_FILE
     {"Unix_Timestamp": "$(date +%s)" },
     {"Uncompressed_Chain_Size": "$(du -hs $BACKUP_PATH/$NET_NAME/state | awk '{print $1}')" },
     {"Tar_FileSize": "$(stat -c%s "$BOOTSTRAP_FILE" | numfmt --to iec)" },
-    {"address": $QRL_ADDRESS, "tx_id": $TXID, "validation":"https://explorer.theqrl.org/tx/$TXID"}
+    {"address": "$QRL_ADDRESS", "tx_id": "$TXID", "validation":"https://explorer.theqrl.org/tx/$TXID"}
 ]
 EoF
 
