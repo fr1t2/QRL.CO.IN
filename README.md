@@ -121,6 +121,13 @@ git submodule update
 
 Notarize the checksums on the chain
 
+If node is installed through nvn, use the following to symlink the executable into your path where expected.
+
+```bash
+sudo ln -s "$(which node)" /usr/bin/node
+sudo ln -s "$(which npm)" /usr/bin/npm
+```
+
 #### Mainnet 
 
 ```bash

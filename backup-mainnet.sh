@@ -15,7 +15,7 @@ echo "----------------------------------------------" | tee -a $BOOTSTRAP_LOGS
 
 ## Backup the chain state
 echo "Backup Chain....." | tee -a $BOOTSTRAP_LOGS  
-sudo -H -u $user /home/$user/QRL.CO.IN/script/QRL_bootstrap/CreateQRLBootstrap-mainnet.sh
+sudo -H -u $user /home/$user/QRL.CO.IN/script/QRL_bootstrap/CreateQRLBootstrap.sh
 echo "Backup Chain Complete!" | tee -a $BOOTSTRAP_LOGS  
 
 ## Notarize the state checksum file
