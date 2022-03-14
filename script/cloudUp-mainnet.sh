@@ -12,14 +12,11 @@
 user="fr1t2"
 DO_SPACE='qrl-chain' # Digital Ocean Space
 DO_BUCKET="mainnet" # Digital Ocean Bucket name
-
 BACKUP_PATH=/home/$user/qrl_bootstrap
 NET_NAME=Mainnet
 BOOTSTRAP_FILE=$BACKUP_PATH/$NET_NAME/QRL_"$NET_NAME"_State.tar.gz
 STATS_FILE=$BACKUP_PATH/$NET_NAME/QRL_Node_Stats.json
 CHECKSUM_FILE=$BACKUP_PATH/$NET_NAME/"$NET_NAME"_State_Checksums.txt
-
-VERSION="v1.0"
 BOOTSTRAP_LOGS=$BACKUP_PATH/qrl_bootstrap.logs
 
 echo "----------------------------------------------" | tee -a $BOOTSTRAP_LOGS 
