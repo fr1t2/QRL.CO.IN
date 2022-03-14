@@ -22,7 +22,7 @@ BACKUP_PATH=/home/$user/qrl_bootstrap
 QRL_DIR=/home/$user/.qrl-testnet
 QRL_WALLET=wallet.json
 BOOTSTRAP_FILE=$BACKUP_PATH/$NET_NAME/QRL_"$NET_NAME"_State.tar.gz
-STATS_FILE=$BACKUP_PATH/$NET_NAME/QQRL_Testnet_Node_Stats.json
+STATS_FILE=$BACKUP_PATH/$NET_NAME/QRL_Testnet_Node_Stats.json
 CHECKSUM_FILE=$BACKUP_PATH/$NET_NAME/"$NET_NAME"_State_Checksums.txt
 BOOTSTRAP_LOGS=$BACKUP_PATH/qrl_bootstrap.logs
 
