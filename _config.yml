@@ -58,7 +58,8 @@ email: info@qrl.co.in
 github_username:  
 
 # Google Analytics
-google-analytics: UA-113155333-1
+# converted to G4 and modified the _includes/meta.html to add the new property config from google
+#google-analytics: G-LCVR3CH8CM
 
 # Disqus
 disqus-shortname: 

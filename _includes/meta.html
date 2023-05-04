@@ -35,7 +35,7 @@
 <meta itemprop="description" content="{% if page.layout == 'default' %}{{site.description}}{% endif %}{{page.description}}">
 <meta itemprop="image" content="{% unless page.layout == 'post' %}{{site.site-image}}{% else %}{{page.post-image}}{% endunless %}">
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- Global site tag (gtag.js) - 
 <script async src="https://www.googletagmanager.com/gtag/js?id={{site.google-analytics}}"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
@@ -46,4 +46,15 @@
     gtag('js', new Date());
 
     gtag('config', '{{site.google-analytics}}');
+</script>
+Google Analytics -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LCVR3CH8CM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LCVR3CH8CM');
 </script>
